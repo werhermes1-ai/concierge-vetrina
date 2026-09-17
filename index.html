@@ -1,17 +1,109 @@
 <!doctype html>
 <html lang="it">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Comanda</title>
-<meta name="robots" content="noindex">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Scopri come aggiornare il sito del tuo locale con Comanda.">
+  <meta name="robots" content="noindex">
+  <title>Come funziona | Comanda</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <h1>Comanda</h1>
-  <p>Il sito del tuo locale, e lo aggiorni come dai una comanda: un messaggio su Telegram.</p>
-  <p class="nota">Anteprima di lavoro. Nome, dominio e prezzi non sono definitivi.</p>
-</main>
+  <header class="topbar">
+    <a class="brand" href="index.html" aria-label="Comanda, torna all'inizio">Comanda<span>.</span></a>
+    <a class="button button-small" href="#giro">Fammi vedere</a>
+  </header>
+
+  <main>
+    <section class="hero" aria-labelledby="titolo">
+      <p class="eyebrow">Come funziona</p>
+      <h1 id="titolo">Il sito cambia con un messaggio</h1>
+      <p class="hero-copy">Niente pannelli da imparare. Scrivi a Comanda su Telegram, controlli il risultato e decidi tu quando pubblicare.</p>
+      <a class="button" href="#giro">Guarda i tre passi</a>
+      <p class="microcopy">Il controllo resta sempre nelle tue mani.</p>
+    </section>
+
+    <section class="flow" id="giro" aria-labelledby="titolo-giro">
+      <div class="section-heading">
+        <p class="eyebrow">Un giro completo</p>
+        <h2 id="titolo-giro">Tre passi. Tutto qui.</h2>
+        <p>Un esempio: vuoi cambiare i piatti del giorno senza interrompere il servizio.</p>
+      </div>
+
+      <ol class="steps">
+        <li class="step">
+          <div class="step-number" aria-hidden="true">01</div>
+          <h3>Scrivi al bot</h3>
+          <p class="step-copy">Manda la modifica come la diresti a una persona.</p>
+          <article class="phone" aria-label="Esempio di chat, richiesta di modifica">
+            <div class="phone-bar">
+              <span class="avatar" aria-hidden="true">C</span>
+              <div><strong>Comanda</strong><small>bot</small></div>
+              <span class="status">online</span>
+            </div>
+            <div class="chat">
+              <div class="bubble bubble-user">Stasera aggiungi amatriciana e gricia tra i primi.<time>18:04</time></div>
+              <div class="bubble bubble-bot">Ricevuto. Preparo la modifica e ti mando l’anteprima.<time>18:04</time></div>
+            </div>
+          </article>
+        </li>
+
+        <li class="step">
+          <div class="step-number" aria-hidden="true">02</div>
+          <h3>Vedi l’anteprima</h3>
+          <p class="step-copy">Controlla il sito prima che la modifica sia visibile.</p>
+          <article class="phone" aria-label="Esempio di chat, controllo dell'anteprima">
+            <div class="phone-bar">
+              <span class="avatar" aria-hidden="true">C</span>
+              <div><strong>Comanda</strong><small>bot</small></div>
+              <span class="status">online</span>
+            </div>
+            <div class="chat">
+              <div class="bubble bubble-bot">Anteprima pronta. Menu aggiornato, orari e contatti invariati.<time>18:05</time></div>
+              <a class="preview-card" href="#controllo" aria-label="Apri l'esempio di anteprima">
+                <span class="preview-image" aria-hidden="true"><i></i><i></i><i></i></span>
+                <strong>Controlla la modifica</strong>
+                <small>Anteprima riservata</small>
+              </a>
+              <div class="bubble bubble-user">Va bene così.<time>18:06</time></div>
+            </div>
+          </article>
+        </li>
+
+        <li class="step" id="controllo">
+          <div class="step-number" aria-hidden="true">03</div>
+          <h3>Decidi e pubblichi</h3>
+          <p class="step-copy">Dai il via solo quando sei soddisfatto del risultato.</p>
+          <article class="phone" aria-label="Esempio di chat, conferma della pubblicazione">
+            <div class="phone-bar">
+              <span class="avatar" aria-hidden="true">C</span>
+              <div><strong>Comanda</strong><small>bot</small></div>
+              <span class="status">online</span>
+            </div>
+            <div class="chat">
+              <div class="bubble bubble-bot">Pubblico questa versione?<time>18:06</time></div>
+              <div class="chat-actions" aria-label="Scelte di esempio">
+                <span>Pubblica</span>
+                <span>Correggi</span>
+              </div>
+              <div class="bubble bubble-bot bubble-done"><span aria-hidden="true">✓</span> Fatto. Il sito è aggiornato.<time>18:07</time></div>
+            </div>
+          </article>
+        </li>
+      </ol>
+    </section>
+
+    <section class="closing" aria-labelledby="titolo-finale">
+      <p class="eyebrow">Più tempo per il locale</p>
+      <h2 id="titolo-finale">Il sito segue il tuo ritmo</h2>
+      <p>Menu, orari e novità possono cambiare senza trasformarsi in un altro lavoro da fare.</p>
+      <a class="button button-light" href="#giro">Rivedi i tre passi</a>
+    </section>
+  </main>
+
+  <footer>
+    <strong>Comanda<span>.</span></strong>
+    <p>Anteprima di lavoro. Recapiti e dominio saranno aggiunti dopo la conferma.</p>
+  </footer>
 </body>
 </html>
