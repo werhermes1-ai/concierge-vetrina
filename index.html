@@ -1,17 +1,124 @@
 <!doctype html>
 <html lang="it">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Comanda</title>
-<meta name="robots" content="noindex">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Comanda crea il sito del tuo locale e ti permette di aggiornarlo con un messaggio su Telegram.">
+  <meta name="robots" content="noindex">
+  <title>Comanda | Il sito del tuo locale</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<main>
-  <h1>Comanda</h1>
-  <p>Il sito del tuo locale, e lo aggiorni come dai una comanda: un messaggio su Telegram.</p>
-  <p class="nota">Anteprima di lavoro. Nome, dominio e prezzi non sono definitivi.</p>
-</main>
+  <header class="site-header">
+    <a class="brand" href="#inizio" aria-label="Comanda, torna all'inizio">Comanda<span>.</span></a>
+    <a class="header-link" href="#come-funziona">Come funziona</a>
+  </header>
+
+  <main id="inizio">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <p class="eyebrow">Siti per locali indipendenti</p>
+        <h1 id="hero-title">Il sito del tuo locale</h1>
+        <p class="hero-lead">Bello da vedere, facile da tenere vivo. Per cambiare un menu, un orario o una foto ti basta scrivere un messaggio su Telegram.</p>
+        <a class="button" href="#demo">Fammi vedere</a>
+      </div>
+
+      <div class="hero-visual" aria-label="Esempio di aggiornamento del sito tramite chat">
+        <div class="phone">
+          <div class="phone-bar">
+            <span class="avatar">C</span>
+            <div><strong>Comanda</strong><small>bot Telegram</small></div>
+          </div>
+          <div class="chat">
+            <p class="message sent">Da stasera aggiungi i carciofi alla romana nel menu.</p>
+            <p class="message received">Fatto. Vuoi vedere l'anteprima?</p>
+            <p class="message sent short">Sì</p>
+            <p class="message received link-message">Anteprima pronta <span>Apri il sito</span></p>
+          </div>
+        </div>
+        <span class="stamp">Aggiornato</span>
+      </div>
+    </section>
+
+    <section class="problem section" aria-labelledby="problem-title">
+      <div class="section-heading">
+        <p class="eyebrow">Il problema</p>
+        <h2 id="problem-title">Il sito resta indietro</h2>
+      </div>
+      <div class="problem-copy">
+        <p>Il menu cambia, arrivano nuove foto, gli orari si allungano. Ma ogni modifica al sito diventa una telefonata, una mail o una cosa da rimandare.</p>
+        <p class="highlight">Così il sito smette di raccontare il locale che esiste oggi.</p>
+      </div>
+    </section>
+
+    <section class="steps section" id="come-funziona" aria-labelledby="steps-title">
+      <div class="section-heading">
+        <p class="eyebrow">Come funziona</p>
+        <h2 id="steps-title">Tre passi, dal telefono</h2>
+      </div>
+      <ol class="step-list">
+        <li>
+          <span class="step-number">01</span>
+          <h3>Scrivi al bot</h3>
+          <p>Chiedi la modifica come la diresti a una persona, direttamente su Telegram.</p>
+        </li>
+        <li>
+          <span class="step-number">02</span>
+          <h3>Vedi l'anteprima</h3>
+          <p>Controlli il risultato prima che sia visibile ai tuoi clienti.</p>
+        </li>
+        <li>
+          <span class="step-number">03</span>
+          <h3>Pubblici</h3>
+          <p>Confermi con un messaggio. Il sito si aggiorna senza pannelli da imparare.</p>
+        </li>
+      </ol>
+    </section>
+
+    <section class="audience section" aria-labelledby="audience-title">
+      <div class="section-heading">
+        <p class="eyebrow">Per chi è</p>
+        <h2 id="audience-title">Per chi apre ogni giorno</h2>
+      </div>
+      <div class="audience-grid">
+        <article><span>01</span><h3>Trattorie</h3><p>Menu, piatti del giorno e giorni di apertura sempre corretti.</p></article>
+        <article><span>02</span><h3>Pizzerie</h3><p>Impasti, proposte stagionali e informazioni per ordinare.</p></article>
+        <article><span>03</span><h3>Bar</h3><p>Colazioni, pause pranzo, aperitivi ed eventi da raccontare.</p></article>
+        <article><span>04</span><h3>Enoteche</h3><p>Nuove etichette, degustazioni e appuntamenti in evidenza.</p></article>
+      </div>
+    </section>
+
+    <section class="demo section" id="demo" aria-labelledby="demo-title">
+      <div class="demo-copy">
+        <p class="eyebrow">La demo</p>
+        <h2 id="demo-title">Guardalo con occhi da cliente</h2>
+        <p>Un sito chiaro, veloce e pensato prima di tutto per il telefono. Menu, orari, indirizzo e carattere del locale sono subito al posto giusto.</p>
+        <p class="demo-note">La demo completa sarà collegata qui.</p>
+      </div>
+      <div class="site-preview" aria-label="Anteprima indicativa del sito di un locale">
+        <div class="browser-bar"><i></i><i></i><i></i><span>Anteprima sito</span></div>
+        <div class="preview-page">
+          <p class="preview-kicker">[Nome del locale]</p>
+          <strong>Una cucina sincera, ogni giorno.</strong>
+          <span class="preview-button">Scopri il menu</span>
+          <div class="preview-photo" aria-hidden="true"><span></span></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact section" id="contatti" aria-labelledby="contact-title">
+      <p class="eyebrow">Contatti</p>
+      <h2 id="contact-title">Vuoi vedere il tuo locale qui?</h2>
+      <p>Raccontaci cosa vorresti cambiare. Ti mostriamo una prima idea, senza gergo tecnico.</p>
+      <span class="button button-placeholder" aria-label="Contatto in arrivo">Contatto in arrivo</span>
+      <small>Il recapito ufficiale sarà pubblicato appena definito.</small>
+    </section>
+  </main>
+
+  <footer>
+    <a class="brand" href="#inizio">Comanda<span>.</span></a>
+    <p>Il sito del locale, aggiornato con un messaggio.</p>
+    <p class="work-note">Anteprima di lavoro. Dominio, contatti e prezzi da definire.</p>
+  </footer>
 </body>
 </html>
