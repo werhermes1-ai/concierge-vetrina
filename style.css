@@ -1,0 +1,6 @@
+:root { --ink:#1d1a17; --paper:#faf6ef; --accent:#b8412a; }
+* { box-sizing:border-box; }
+body { margin:0; background:var(--paper); color:var(--ink); font:18px/1.5 system-ui, sans-serif; padding:0 16px; }
+main { max-width:640px; margin:0 auto; padding-block:64px; }
+h1 { font-size:clamp(2.2rem, 8vw, 4rem); margin:0 0 .5em; color:var(--accent); }
+.nota { font-size:.85rem; opacity:.7; }
