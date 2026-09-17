@@ -8,3 +8,7 @@ Una voce per run. Il nome commerciale è Comanda; dominio, handle e prezzi NON s
 4. [ ] Pagina demo che linka il sito del Collettivo Gastronomico Testaccio (`https://collettivo-gastronomico-testaccio.vercel.app`) e spiega cosa provare.
 5. [ ] Form contatto senza backend (mailto o Formspree con endpoint segnaposto), più pagina grazie.
 6. [ ] Pitch in una pagina e mail di risposta ai lead (in `copy/`), italiano, senza trattini lunghi.
+
+## Feedback acquisiti
+
+- [x] 2026-09-17 10:13, prova di intake, ignorata come richiesto.
