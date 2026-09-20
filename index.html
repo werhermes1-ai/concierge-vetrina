@@ -1,17 +1,111 @@
 <!doctype html>
 <html lang="it">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Comanda</title>
-<meta name="robots" content="noindex">
-<link rel="stylesheet" href="style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Parliamo del tuo sito | Comanda</title>
+  <meta name="description" content="Racconta a Comanda il sito che serve al tuo locale.">
+  <meta name="robots" content="noindex,nofollow">
+  <meta http-equiv="Content-Security-Policy" content="form-action 'none'">
+  <link rel="stylesheet" href="style.css">
+  <script src="site.js" defer></script>
 </head>
 <body>
-<main>
-  <h1>Comanda</h1>
-  <p>Il sito del tuo locale, e lo aggiorni come dai una comanda: un messaggio su Telegram.</p>
-  <p class="nota">Anteprima di lavoro. Nome, dominio e prezzi non sono definitivi.</p>
-</main>
+  <a class="skip-link" href="#contenuto">Vai al contenuto</a>
+
+  <header class="site-header">
+    <div class="shell header-inner">
+      <a class="brand" href="index.html" aria-label="Comanda, pagina iniziale">
+        <img src="assets/comanda-lockup-orizzontale-chiaro.svg" alt="Comanda" width="154" height="52">
+      </a>
+      <a class="btn btn-small" href="#contatto">Scrivici</a>
+    </div>
+  </header>
+
+  <main id="contenuto">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Il sito del tuo locale</p>
+          <h1>Scrivi. È online.</h1>
+          <p class="lead">Menu nuovo stasera? Lo scrivi a Comanda e alle 19 è online. Senza aspettare nessuno.</p>
+          <a class="btn" href="#contatto">Parliamone</a>
+        </div>
+
+        <div class="slip" aria-label="Esempio di aggiornamento">
+          <span class="slip-holes" aria-hidden="true"></span>
+          <p class="slip-label">Il tuo messaggio</p>
+          <p class="slip-message">“Da stasera torna il supplì alla carbonara.”</p>
+          <div class="status"><span aria-hidden="true"></span> Aggiornamento pronto</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section" id="contatto" aria-labelledby="contact-title">
+      <div class="shell contact-grid">
+        <div class="contact-copy">
+          <p class="eyebrow">Partiamo da qui</p>
+          <h2 id="contact-title">Parliamo del tuo sito</h2>
+          <p>Dicci che locale gestisci e cosa vorresti cambiare. Non serve preparare un brief.</p>
+          <div class="note" role="note">
+            <strong>Questa è un’anteprima.</strong>
+            <span>Il modulo non invia dati. Il recapito sarà collegato quando verrà deciso.</span>
+          </div>
+        </div>
+
+        <form class="contact-form" data-demo-form>
+          <div class="field">
+            <label for="nome">Il tuo nome</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required>
+          </div>
+
+          <div class="field">
+            <label for="locale">Nome del locale</label>
+            <input id="locale" name="locale" type="text" autocomplete="organization" required>
+          </div>
+
+          <div class="field">
+            <label for="tipo">Che locale è?</label>
+            <select id="tipo" name="tipo" required>
+              <option value="">Scegli una voce</option>
+              <option>Ristorante o trattoria</option>
+              <option>Pizzeria</option>
+              <option>Bar</option>
+              <option>Enoteca</option>
+              <option>Altro locale</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="recapito">Come possiamo ricontattarti?</label>
+            <input id="recapito" name="recapito" type="text" autocomplete="off" inputmode="text" placeholder="Telefono o email" required>
+          </div>
+
+          <div class="field">
+            <label for="messaggio">Cosa vuoi cambiare?</label>
+            <textarea id="messaggio" name="messaggio" rows="4" placeholder="Per esempio: menu, prezzi o orari"></textarea>
+          </div>
+
+          <label class="check" for="demo-ok">
+            <input id="demo-ok" name="demo-ok" type="checkbox" required>
+            <span>Ho capito che questa anteprima non invia il messaggio.</span>
+          </label>
+
+          <button class="btn submit" type="button" data-demo-submit>Prepara il messaggio</button>
+          <noscript><p class="form-help">Per provare questa anteprima serve JavaScript. Nessun dato viene inviato.</p></noscript>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell footer-inner">
+      <img src="assets/comanda-lockup-orizzontale-scuro.svg" alt="Comanda" width="154" height="52">
+      <div>
+        <p>Comanda è un prodotto di WER S.r.l., Roma.</p>
+        <p class="footer-note">Privacy: in arrivo</p>
+      </div>
+    </div>
+  </footer>
 </body>
 </html>
