@@ -6,7 +6,7 @@ Una voce per run. Il nome commerciale è Comanda; dominio, handle e prezzi NON s
 2. [~] (agent/come-funziona-chat) Pagina "come funziona" con il giro del bot in tre schermate (mockup HTML/CSS di una chat Telegram, niente screenshot veri).
 3. [~] (agent/prezzi-segnaposto) Sezione prezzi con segnaposto: "sito una tantum" + "canone mensile del bot", cifre da decidere con Marco (lasciare `€ —` e una nota nel report che le chiede).
 4. [~] (agent/pagina-demo-cgt) Pagina demo che linka il sito del Collettivo Gastronomico Testaccio (`https://collettivo-gastronomico-testaccio.vercel.app`) e spiega cosa provare.
-5. [ ] Form contatto senza backend (mailto o Formspree con endpoint segnaposto), più pagina grazie.
+5. [~] (agent/form-contatto-grazie) Form contatto senza backend (mailto o Formspree con endpoint segnaposto), più pagina grazie.
 6. [ ] Pitch in una pagina e mail di risposta ai lead (in `copy/`), italiano, senza trattini lunghi.
 
 ## Feedback acquisiti
