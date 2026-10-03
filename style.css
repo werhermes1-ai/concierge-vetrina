@@ -233,10 +233,10 @@ h3 { font-size: var(--fs-body-lg); font-weight: var(--w-bold); line-height: var(
 .hero__grid { display: grid; gap: var(--s-7); }
 
 /* I tre punti: come le righe del foglietto del logo, due d'inchiostro e l'ultima mattone */
-/* Ogni punto su una riga: il più lungo ("Lo cambi con un messaggio", col numero) misura 14,3em,
-   quindi il corpo è la larghezza della colonna divisa per 14,4. */
+/* Ogni punto su una riga: il più lungo ("Lo modifichi con un messaggio", col numero) misura 15,8em,
+   quindi il corpo è la larghezza della colonna divisa per 15,9. */
 .hero__copy { container-type: inline-size; }
-.claim { display: grid; gap: var(--s-3); font-size: clamp(1.25rem, 6.2vw - 0.15rem, 3.5rem); font-size: min(3.5rem, 100cqi / 14.4); font-weight: 800; line-height: 1.06; letter-spacing: -0.02em; white-space: nowrap; }
+.claim { display: grid; gap: var(--s-3); font-size: clamp(1.125rem, 6.25vw - 0.15rem, 3.5rem); font-size: min(3.5rem, 100cqi / 15.9); font-weight: 800; line-height: 1.06; letter-spacing: -0.02em; white-space: nowrap; }
 .claim__row { display: flex; align-items: flex-start; }
 .claim__n { flex: none; display: grid; place-items: center; width: 1.5em; height: 1.5em; margin: 0.28em 0.55em 0 0; border-radius: 50%; background: var(--ink); color: var(--paper); font-size: 0.5em; font-weight: 800; letter-spacing: 0; }
 .claim__row:last-of-type { color: var(--brick); }
