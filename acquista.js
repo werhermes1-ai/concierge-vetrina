@@ -164,7 +164,7 @@
 
   // ---------- ① Il link ----------
   var ERRORI_LOCALE = {
-    non_maps: '<p>Questo non sembra un link di Google Maps. Su Maps apri il tuo locale, tocca Condividi e copia il link.</p>',
+    non_maps: '<p>Questo non sembra un link di Google Maps. Su Maps apri il tuo locale, tocca Condividi e copia il link.</p><p>Se non ci riesci, ' + PARLA + '.</p>',
     non_trovato: '<p>Non troviamo il locale da questo link.</p><p>Controlla il link oppure ' + PARLA + '.</p>',
     troppe: '<p>Troppe richieste, riprova fra un\'ora.</p>',
     giu: '<p>Riprova tra poco.</p><p>Oppure ' + PARLA + '.</p>'
@@ -176,7 +176,8 @@
       : 'giu';
     inputLink.setAttribute('aria-invalid', chiave === 'non_maps' ? 'true' : 'false');
     avviso(1, ERRORI_LOCALE[chiave]);
-    if (chiave === 'non_trovato') apriParla();
+    // ogni intoppo porta a "Parla con noi" (spec §4); il link sbagliato no: quasi sempre è un incolla sbagliato
+    if (chiave === 'non_trovato' || chiave === 'giu') apriParla();
   }
 
   formLink.addEventListener('submit', function (e) {
