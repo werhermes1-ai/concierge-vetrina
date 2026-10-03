@@ -3,244 +3,161 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Comanda · Il sito del tuo locale, lo aggiorni tu con un messaggio</title>
-  <meta name="description" content="Il sito del tuo locale lo costruiamo noi. Prezzi, piatti, orari e foto li cambi scrivendo a Comanda su Telegram. Primi 10 locali: sito e un anno di Comanda a 300 € + IVA.">
+  <title>Sito per il tuo locale a Roma in 48 ore | Comanda</title>
+  <meta name="description" content="Il sito del tuo locale in 48 ore, poi lo cambi dal cellulare. Listino 1.000 € + IVA, per i primi 10 locali 300 € + IVA con un anno compreso.">
   <link rel="canonical" href="https://sitocomanda.it/">
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Comanda">
   <meta property="og:locale" content="it_IT">
   <meta property="og:url" content="https://sitocomanda.it/">
-  <meta property="og:title" content="Il sito del tuo locale. Lo aggiorni tu, con un messaggio.">
-  <meta property="og:description" content="Te lo costruiamo noi. Poi prezzi, piatti, orari e foto li cambi scrivendo a Comanda su Telegram.">
+  <meta property="og:title" content="Il sito del tuo locale, pronto in 48 ore. Poi lo cambi dal cellulare.">
+  <meta property="og:description" content="Listino 1.000 € + IVA. Per i primi 10 locali: 300 € + IVA, sito e un anno di Comanda.">
   <meta property="og:image" content="https://sitocomanda.it/og-comanda.png">
+  <meta property="og:image:alt" content="Comanda: il sito del tuo locale in 48 ore, 300 € + IVA per i primi 10 locali">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="theme-color" content="#1D1A17">
   <link rel="icon" href="assets/comanda-favicon.ico" sizes="any">
   <link rel="icon" href="assets/comanda-favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/comanda-icona-ios-180.png">
   <link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="tokens.css">
   <link rel="stylesheet" href="style.css">
   <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "name": "Comanda",
-    "url": "https://sitocomanda.it/",
-    "description": "Sito per ristoranti, bar ed enoteche costruito da WER, aggiornabile dal titolare con un messaggio su Telegram.",
-    "areaServed": "IT",
-    "provider": {
-      "@type": "Organization",
-      "name": "WER S.r.l.",
-      "email": "info@sitocomanda.it",
-      "address": { "@type": "PostalAddress", "streetAddress": "Via Beata Maria de Mattias 2", "postalCode": "00183", "addressLocality": "Roma", "addressCountry": "IT" },
-      "vatID": "IT17627411006"
-    },
-    "offers": { "@type": "Offer", "price": "300", "priceCurrency": "EUR", "description": "Primi 10 locali: sito fatto da noi e un anno di Comanda, IVA esclusa." }
-  }
+  {"@context":"https://schema.org","@type":"Service","name":"Comanda","url":"https://sitocomanda.it/",
+   "description":"Sito per locali (ristoranti, trattorie, bar, enoteche, pizzerie) costruito in 48 ore da WER S.r.l. e aggiornabile dal titolare dal cellulare, con una chat su Telegram.",
+   "areaServed":{"@type":"City","name":"Roma"},
+   "provider":{"@type":"Organization","name":"WER S.r.l.","url":"https://sitocomanda.it/","logo":"https://sitocomanda.it/assets/comanda-icona-512.png","email":"info@sitocomanda.it","vatID":"IT17627411006",
+     "address":{"@type":"PostalAddress","streetAddress":"Via Beata Maria de Mattias 2","postalCode":"00183","addressLocality":"Roma","addressCountry":"IT"}},
+   "offers":[
+    {"@type":"Offer","name":"Sito + primo anno di Comanda, prezzo di listino","price":"1000","priceCurrency":"EUR","priceSpecification":{"@type":"PriceSpecification","price":"1000","priceCurrency":"EUR","valueAddedTaxIncluded":false}},
+    {"@type":"Offer","name":"Offerta di lancio: sito + primo anno, primi 10 locali","price":"300","priceCurrency":"EUR","availability":"https://schema.org/LimitedAvailability","eligibleQuantity":{"@type":"QuantitativeValue","maxValue":10},"priceSpecification":{"@type":"PriceSpecification","price":"300","priceCurrency":"EUR","valueAddedTaxIncluded":false}},
+    {"@type":"Offer","name":"Rinnovo mensile dal secondo anno","price":"10","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"10","priceCurrency":"EUR","valueAddedTaxIncluded":false,"billingDuration":"P1M"}},
+    {"@type":"Offer","name":"Rinnovo annuale dal secondo anno","price":"100","priceCurrency":"EUR","priceSpecification":{"@type":"UnitPriceSpecification","price":"100","priceCurrency":"EUR","valueAddedTaxIncluded":false,"billingDuration":"P1Y"}}
+   ]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+   {"@type":"Question","name":"Cosa pago dopo il primo anno?","acceptedAnswer":{"@type":"Answer","text":"10 € + IVA al mese, oppure 100 € + IVA se paghi l'anno intero. Disdici quando vuoi."}},
+   {"@type":"Question","name":"Il sito e il dominio sono miei?","acceptedAnswer":{"@type":"Answer","text":"Contenuti e dominio sono a tuo nome. Se un giorno smetti, ti diamo una copia completa del sito."}},
+   {"@type":"Question","name":"Non ho Telegram, uso WhatsApp.","acceptedAnswer":{"@type":"Answer","text":"Si installa in un minuto e lo apri solo per il sito. Funziona anche dal computer."}},
+   {"@type":"Question","name":"Posso tenere il sito che ho già?","acceptedAnswer":{"@type":"Answer","text":"No: Comanda funziona sui siti che costruiamo noi. Il tuo lo rifacciamo partendo da quello che hai."}}
+  ]}
   </script>
 </head>
 <body>
   <a class="skip" href="#main">Vai al contenuto</a>
 
-  <div class="promo">
-    <div class="wrap promo__in">
-      <svg class="promo__icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M13 2 4 14h7l-1 8 9-12h-7z"/></svg>
-      <p><span class="only-wide">Offerta di lancio: per i primi 10 locali, sito fatto da noi e un anno di Comanda a 300 € + IVA.</span><span class="only-narrow">Primi 10 locali: sito + un anno di Comanda a 300 € + IVA</span></p>
-      <a class="promo__link only-wide" href="#offerta">Scopri come</a>
-    </div>
-  </div>
-
   <header class="top">
     <div class="wrap top__in">
-      <a class="logo" href="#" aria-label="Comanda, torna all'inizio"><img src="assets/comanda-lockup-orizzontale-chiaro.svg" alt="Comanda" width="110" height="30"></a>
-      <nav class="nav" id="nav" aria-label="Principale">
-        <a href="#come">Come funziona</a>
-        <a href="#cosa">Cosa cambi</a>
-        <a href="#domande">Domande</a>
-        <a class="btn btn--line btn--sm" href="https://prova.sitocomanda.it/prova">Provalo gratis</a>
-      </nav>
-      <button class="menu" type="button" aria-expanded="false" aria-controls="nav" aria-label="Apri il menù">
-        <span></span><span></span><span></span>
-      </button>
+      <a class="logo" href="/" aria-label="Comanda, torna all'inizio"><img src="assets/comanda-lockup-orizzontale-chiaro.svg" alt="Comanda" width="110" height="30"></a>
+      <a class="btn btn--line btn--sm" href="https://prova.sitocomanda.it/prova">Provalo gratis</a>
     </div>
   </header>
 
   <main id="main">
-    <!-- HERO -->
+    <!-- HERO: figli piatti, l'ordine lo decide il CSS -->
     <section class="hero">
       <div class="wrap hero__grid">
-        <div class="hero__copy">
-          <h1>Il sito del tuo locale. Lo aggiorni tu, con un messaggio.</h1>
-          <p class="lead">Te lo costruiamo noi. Poi prezzi, piatti, orari e foto li cambi scrivendo a Comanda su Telegram<span class="only-wide">, come scriveresti al cameriere. Guardi l'anteprima, pubblichi, fatto</span>.</p>
-          <a class="deal" href="#offerta">
-            <strong class="deal__price">300 € + IVA</strong>
-            <span class="deal__text"><b>Sito fatto da noi + un anno di Comanda</b><small>Solo per i primi 10 locali</small></span>
-          </a>
-          <div class="hero__cta only-wide">
-            <a class="btn btn--brick" href="https://prova.sitocomanda.it/prova">Provalo sul tuo telefono <svg class="arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
-            <a class="btn btn--ghost" href="https://wa.me/393895848609?text=Ciao%2C%20vorrei%20parlare%20del%20sito%20del%20mio%20locale" rel="noopener">Parliamo del tuo sito</a>
-          </div>
-          <p class="note only-wide">Prima di decidere, provalo gratis per 24 ore su un locale di esempio. Ti serve solo Telegram.</p>
-        </div>
+        <h1>Il sito del tuo locale, pronto in 48 ore. Poi lo cambi dal cellulare.</h1>
+        <p class="lead">Noi lo facciamo, tu lo aggiorni: menù, orari e foto.</p>
 
-        <div class="chat" data-chat>
-          <div class="chat__head">
-            <span class="chat__avatar" aria-hidden="true">C</span>
-            <span class="chat__who"><b>Comanda</b><small>bot · online</small></span>
-            <span class="chat__live"><i></i>Demo live</span>
+        <figure class="phone" id="demo" aria-label="Esempio di chat con Comanda su Telegram: la Carbonara passa da € 13.00 a € 14.00 e il sito si aggiorna">
+          <div class="tg-status" aria-hidden="true">
+            <span>12:41</span>
+            <svg viewBox="0 0 44 12"><path d="M1 9h2v2H1zM5 7h2v4H5zM9 5h2v6H9zM13 3h2v8h-2z"/><path d="M20 5.5a7 7 0 0 1 9 0M22 8a4 4 0 0 1 5 0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="33" y="2" width="9" height="8" rx="2" fill="none" stroke="currentColor"/><rect x="34.5" y="3.5" width="6" height="5" rx="1"/></svg>
           </div>
-          <div class="chat__body" data-chat-body aria-live="polite">
-            <span class="chat__day">Oggi</span>
-            <div class="msg msg--me"><p>Da oggi la carbonara costa 13 €</p><time>12:41 <svg viewBox="0 0 16 10" aria-hidden="true"><path d="M1 5l3 3 6-7M6 8l1 0 6-7"/></svg></time></div>
-            <div class="msg msg--bot">
-              <p>Fatto. La carbonara ora costa 13 € ed è già online.</p>
-              <div class="site">
-                <span class="site__url">dachecco.it</span>
-                <b class="site__name">Da Checco al Portico</b>
-                <ul class="site__menu" data-site-menu>
-                  <li><span>Cacio e pepe</span><span>11 €</span></li>
-                  <li class="is-new"><span>Carbonara</span><span><s>12 €</s> 13 €</span></li>
-                </ul>
-              </div>
-              <time>12:41</time>
+          <div class="tg-head" aria-hidden="true">
+            <span class="tg-back">‹ Chat</span>
+            <span class="tg-who"><b>Comanda</b><small>bot</small></span>
+            <img class="tg-avatar" src="assets/comanda-avatar-96.png" alt="" width="34" height="34">
+          </div>
+          <div class="tg-body" data-demo-body data-demo-state="final">
+            <div class="tg-msg tg-msg--me"><p>carbonara</p><time>12:41 <i class="tg-ticks"></i></time></div>
+            <div class="tg-msg"><p>Carbonara: adesso è € 13.00. Quale prezzo vuoi mettere?</p><time>12:41</time>
+              <div class="tg-kb"><div class="tg-kb__row"><span>€ 12.50</span><span>€ 13.00</span><span>€ 13.50</span></div><div class="tg-kb__row"><span class="is-tap">€ 14.00</span><span>€ 14.50</span><span>€ 15.00</span></div></div>
+            </div>
+            <div class="tg-msg"><p>Ecco come viene:<br><span class="tg-link">prova.sitocomanda.it/…/anteprima/</span></p><time>12:42</time>
+              <div class="tg-kb"><div class="tg-kb__row"><span>🚀 Pubblica</span><span>✗ Annulla</span></div></div>
+            </div>
+            <div class="tg-msg"><p>Fatto, è online:<br><span class="tg-link">prova.sitocomanda.it/…/</span></p><time>12:42</time>
+              <div class="tg-kb"><div class="tg-kb__row"><span>↩️ Annulla</span></div></div>
             </div>
           </div>
-          <div class="chat__input" aria-hidden="true">
-            <span>Scrivi al bot come a un collega…</span>
-            <span class="chat__send"><svg viewBox="0 0 20 20"><path d="M3 10 17 3l-4 14-3-6z"/></svg></span>
+          <div class="tg-input" aria-hidden="true">
+            <svg viewBox="0 0 20 20"><path d="m14 9-5.5 5.5a3 3 0 0 1-4.2-4.2l6.4-6.4a2 2 0 0 1 2.8 2.8l-6.3 6.3a1 1 0 0 1-1.4-1.4L11 6.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            <span class="tg-field">Messaggio</span>
+            <svg viewBox="0 0 20 20"><rect x="7" y="2" width="6" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 9.5a5.5 5.5 0 0 0 11 0M10 15v3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </div>
-          <div class="chat__try">
-            <p><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M7 11V4.5a1.5 1.5 0 0 1 3 0V10m0-1.5a1.5 1.5 0 0 1 3 0V10m0-.5a1.5 1.5 0 0 1 3 0v3.5a5 5 0 0 1-5 5h-1a5 5 0 0 1-4.2-2.3L3.5 12a1.4 1.4 0 0 1 2.3-1.6L7 12"/></svg> Prova tu: tocca una richiesta</p>
-            <div class="chips">
-              <button type="button" data-ask="tiramisu"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M4 8h12l-1.5 8h-9zM7 8V6a3 3 0 0 1 6 0v2"/></svg>Tiramisù a 6 €</button>
-              <button type="button" data-ask="chiuso"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="4" y="9" width="12" height="8" rx="1"/><path d="M7 9V6.5a3 3 0 0 1 6 0V9"/></svg>Chiuso lunedì</button>
-              <button type="button" data-ask="foto"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M3 6h3l1.5-2h5L14 6h3v10H3z"/><circle cx="10" cy="11" r="3"/></svg>Cambia la foto</button>
-              <button type="button" data-ask="natale"><svg viewBox="0 0 20 20" aria-hidden="true"><rect x="3" y="4" width="14" height="13" rx="1"/><path d="M3 8h14M7 2v4m6-4v4"/></svg>Orari di Natale</button>
-            </div>
-          </div>
+        </figure>
+
+        <div class="price-mini">
+          <p class="price-mini__list">Listino <s class="strike">1.000 € + IVA</s></p>
+          <p class="price-mini__now"><b>300 € + IVA</b> <span class="badge">-70%</span></p>
+          <p class="price-mini__note">Sito + un anno di Comanda · primi 10 locali</p>
         </div>
 
-        <div class="hero__cta only-narrow">
-          <a class="btn btn--brick btn--block" href="https://prova.sitocomanda.it/prova">Provalo sul tuo telefono <svg class="arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
-          <p class="note">Prima di decidere, provalo gratis per 24 ore. Ti serve solo Telegram.</p>
-        </div>
+        <a class="btn btn--brick btn--block hero__cta" href="https://prova.sitocomanda.it/prova">Provalo gratis <svg class="arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
       </div>
     </section>
 
-    <!-- TRE GESTI -->
-    <section class="dark steps" id="come">
+    <!-- COME FUNZIONA -->
+    <section class="section steps" id="come">
       <div class="wrap">
-        <div class="steps__head">
-          <h2>Tre gesti, dal telefono.</h2>
-          <p class="only-wide">Niente computer, niente telefonate.</p>
-        </div>
+        <h2>Come funziona</h2>
         <ol class="steps__list">
-          <li>
-            <span class="steps__n">1</span>
-            <div><h3>Scrivi a Comanda</h3><p>Su Telegram, con parole tue: «Lunedì siamo chiusi», «La gricia oggi costa 11 €», o una foto della sala.</p></div>
-          </li>
-          <li>
-            <span class="steps__n">2</span>
-            <div><h3>Guardi l'anteprima</h3><p>Comanda ti manda il sito com'è con la modifica. Se qualcosa non va, lo correggi prima che lo veda qualcuno.</p></div>
-          </li>
-          <li>
-            <span class="steps__n">3</span>
-            <div><h3>Pubblichi</h3><p>Un tocco e il sito è aggiornato. Hai cambiato idea? Torni indietro.</p></div>
-          </li>
+          <li><span class="steps__n" aria-hidden="true">1</span><div><h3>Entro 48 ore il sito è online</h3><p>Dalla firma alla consegna non passano più di 48 ore. Spesso meno.</p></div></li>
+          <li><span class="steps__n" aria-hidden="true">2</span><div><h3>Lo stesso giorno si accende Comanda</h3><p>Ti mandiamo il link alla chat su Telegram. Da lì cambi il sito.</p></div></li>
+          <li><span class="steps__n" aria-hidden="true">3</span><div><h3>Il primo anno è compreso</h3><p>Se smetti, il sito resta tuo.</p></div></li>
         </ol>
       </div>
     </section>
 
     <!-- COSA CAMBI -->
     <section class="section changes" id="cosa">
-      <div class="wrap changes__grid">
-        <div>
-          <h2>Quello che cambia ogni settimana, lo cambi tu.</h2>
-          <p class="only-wide">Il menù del giorno, un prezzo, la chiusura per ferie, la foto della sala nuova. Scrivi come parli: Comanda capisce e ti fa vedere il risultato.</p>
-        </div>
+      <div class="wrap">
+        <h2>Cosa cambi dalla chat</h2>
         <ul class="changes__list">
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v7a2 2 0 0 0 2 2h0a2 2 0 0 0 2-2V3M7 12v9M17 3c-2 0-3 2.5-3 6s1 4 3 4v8"/></svg><q>Aggiungi la gricia a 11 €</q><span>Nuovo piatto nel menù</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z"/><circle cx="7.5" cy="7.5" r="1.5"/></svg><q>La carbonara da oggi costa 13 €</q><span>Prezzo aggiornato</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4m8-4v4M10 14l4 4m0-4-4 4"/></svg><q>Lunedì siamo chiusi</q><span>Orari sul sito e nella scheda</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg><b>Una foto della sala</b><span>Nuova copertina, dopo la tua conferma</span></li>
-          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg><q>Il numero nuovo è 06 1234 5678</q><span>Telefono aggiornato ovunque</span></li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3v7a2 2 0 0 0 4 0V3M7 12v9M17 3c-2 0-3 2.5-3 6s1 4 3 4v8"/></svg>Prezzi e piatti</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="13" r="8"/><path d="M12 9v4l2.5 2M5 3 2 6M19 3l3 3"/></svg>Orari</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4m8-4v4M10 14l4 4m0-4-4 4"/></svg>Ferie e chiusure</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="m21 15-5-5L5 21"/></svg>Foto del sito</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Telefono</li>
+          <li><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 14 4 9l5-5"/><path d="M4 9h10.5a5.5 5.5 0 0 1 0 11H11"/></svg>Torni indietro</li>
         </ul>
+        <p class="changes__note">Ogni modifica la vedi prima in anteprima. Pubblichi solo se ti convince.</p>
+        <p class="changes__who">Lavoriamo con locali di Roma: ristoranti, trattorie, bar, enoteche, pizzerie.</p>
       </div>
     </section>
 
-    <!-- OFFERTA -->
-    <section class="section offer-wrap" id="offerta">
-      <div class="wrap">
-        <div class="offer">
-          <div class="offer__copy">
-            <h2>Offerta di lancio, per i primi 10 locali.</h2>
-            <p class="only-wide">Ti costruiamo il sito del locale e per un anno lo aggiorni con Comanda senza pagare nulla in più. Quando i dieci posti sono presi, l'offerta chiude.</p>
-            <ul class="ticks">
-              <li>Il sito del tuo locale, fatto da noi</li>
-              <li>Comanda per 12 mesi<span class="only-wide">: modifiche quando vuoi</span></li>
-              <li>Dominio a tuo nome</li>
-            </ul>
-            <a class="btn btn--amber" href="https://wa.me/393895848609?text=Ciao%2C%20vorrei%20uno%20dei%2010%20posti%20di%20Comanda" rel="noopener">Voglio uno dei 10 posti <svg class="arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
+    <!-- PREZZO -->
+    <section class="section offer" id="prezzo">
+      <div class="wrap offer__in">
+        <div class="offer__head">
+          <p class="eyebrow">Offerta di lancio</p>
+          <h2>Sito fatto da noi e un anno di Comanda.</h2>
+        </div>
+        <div class="offer__body">
+          <p class="offer__list"><span>Prezzo di listino</span> <s class="strike strike--big">1.000 € + IVA</s></p>
+          <p class="offer__for">Per i primi 10 locali</p>
+          <p class="offer__now"><b>300 €</b> <span class="offer__side"><span class="badge badge--amber">-70%</span><span>+ IVA, una volta</span></span></p>
+          <div class="seats">
+            <span class="seats__dots" aria-hidden="true"><i class="is-taken"></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
+            <p>Restano 9 posti su 10</p>
           </div>
-          <div class="slip" aria-label="Primo anno: 300 euro più IVA, una volta sola, sito compreso. 10 posti.">
-            <span class="slip__label">Primo anno</span>
-            <b class="slip__price">300 €</b>
-            <span class="slip__sub">+ IVA, una volta sola, sito compreso</span>
-            <span class="slip__seats" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></span>
-            <span class="slip__count">10 posti</span>
-          </div>
+          <hr>
+          <p class="offer__renew">Dal secondo anno: 10 € + IVA al mese, oppure 100 € + IVA all'anno.</p>
         </div>
       </div>
     </section>
 
-    <!-- CONFRONTO -->
-    <section class="section compare only-wide">
-      <div class="wrap">
-        <h2>Perché non un'agenzia, o un pannello fai da te</h2>
-        <table>
-          <thead><tr><th scope="col"><span class="sr">Domanda</span></th><th scope="col">Agenzia web</th><th scope="col">Pannello fai da te</th><th scope="col" class="us">Comanda</th></tr></thead>
-          <tbody>
-            <tr><th scope="row">Chi fa il sito</th><td>L'agenzia</td><td>Tu, da zero</td><td class="us">Noi, per te</td></tr>
-            <tr><th scope="row">Per cambiare un prezzo</th><td>Chiami e aspetti</td><td>Apri il pannello, se ricordi la password</td><td class="us">Scrivi un messaggio</td></tr>
-            <tr><th scope="row">Quanto ci vuole</th><td>Giorni</td><td>Mezz'ora, la prima volta</td><td class="us">Due minuti</td></tr>
-            <tr><th scope="row">Cosa devi imparare</th><td>Niente, ma dipendi da loro</td><td>Il pannello</td><td class="us">Niente: usi Telegram</td></tr>
-          </tbody>
-        </table>
-        <p class="fine">Un sito da un'agenzia romana costa da 800 a 5.000 euro, e ogni modifica passa da loro. Fonte: listini pubblici delle agenzie, settembre 2026.</p>
-      </div>
-    </section>
-
-    <!-- PROVA -->
-    <section class="section try-wrap">
-      <div class="wrap">
-        <div class="try">
-          <div class="try__copy">
-            <h2>Provalo adesso, sul tuo telefono.</h2>
-            <p>Ti prepariamo la copia di un sito di esempio<span class="only-wide">, la trattoria Da Checco al Portico</span>. Per 24 ore la cambi come vuoi<span class="only-wide">: un prezzo, una foto, un giorno di chiusura. Poi decidi tu</span>.</p>
-            <a class="btn btn--amber" href="https://prova.sitocomanda.it/prova">Crea la mia prova <svg class="arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
-            <p class="note">Gratis, niente carta di credito. Ti chiediamo solo nome, locale e un contatto.</p>
-          </div>
-          <svg class="try__ticket" viewBox="0 0 120 140" aria-hidden="true">
-            <g transform="rotate(-10 60 70)">
-              <path d="M22 14h72v104l-9-6-9 6-9-6-9 6-9-6-9 6-9-6-9 6z" fill="#FAF6EF" stroke="#1D1A17" stroke-width="5" stroke-linejoin="round"/>
-              <path d="M36 38h44M36 54h44" stroke="#1D1A17" stroke-width="6" stroke-linecap="round"/>
-              <path d="M36 74h44M36 90h30" stroke="#B8412A" stroke-width="8" stroke-linecap="round"/>
-            </g>
-          </svg>
-        </div>
-      </div>
-    </section>
-
-    <!-- FAQ -->
+    <!-- DOMANDE -->
     <section class="section faq" id="domande">
-      <div class="wrap faq__grid">
-        <h2>Domande che ci fanno</h2>
+      <div class="wrap">
+        <h2>Domande</h2>
         <div class="faq__list">
-          <details><summary>Telegram non ce l'ho, uso WhatsApp.</summary><p>Si installa in un minuto e lo apri solo per il sito. Funziona anche dal computer.</p></details>
-          <details><summary>Posso usarlo sul sito che ho già?</summary><p>No: Comanda funziona sui siti che costruiamo noi. Il tuo lo rifacciamo partendo da quello che hai.</p></details>
-          <details><summary>E se sbaglio a scrivere?</summary><p>Prima di andare online vedi sempre l'anteprima. Niente si pubblica senza il tuo sì, e puoi tornare indietro.</p></details>
-          <details><summary>Il sito è mio?</summary><p>Contenuti e dominio sono a tuo nome. Se un giorno smetti, ti diamo una copia completa del sito.</p></details>
-          <details><summary>Quanto costa?</summary><p>Per i primi 10 locali: 300 € + IVA una volta sola, con il sito fatto da noi e un anno di Comanda compreso. Cosa succede dal secondo anno te lo scriviamo prima di iniziare.</p></details>
+          <details><summary>Cosa pago dopo il primo anno?</summary><p>10 € + IVA al mese, oppure 100 € + IVA se paghi l'anno intero. Disdici quando vuoi.</p></details>
+          <details><summary>Il sito e il dominio sono miei?</summary><p>Contenuti e dominio sono a tuo nome. Se un giorno smetti, ti diamo una copia completa del sito.</p></details>
+          <details><summary>Non ho Telegram, uso WhatsApp.</summary><p>Si installa in un minuto e lo apri solo per il sito. Funziona anche dal computer.</p></details>
+          <details><summary>Posso tenere il sito che ho già?</summary><p>No: Comanda funziona sui siti che costruiamo noi. Il tuo lo rifacciamo partendo da quello che hai.</p></details>
         </div>
       </div>
     </section>
@@ -248,11 +165,10 @@
     <!-- CHIUSURA -->
     <section class="section close">
       <div class="wrap close__in">
-        <h2>Parliamo del sito del tuo locale.</h2>
-        <div class="close__cta">
-          <a class="btn btn--brick" href="https://wa.me/393895848609?text=Ciao%2C%20vorrei%20prenotare%20uno%20dei%2010%20posti%20di%20Comanda" rel="noopener"><svg class="wa" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 20l1.2-4A8 8 0 1 1 8 18.8z"/></svg>Prenota uno dei 10 posti</a>
-          <a class="btn btn--line only-wide" href="https://prova.sitocomanda.it/prova">Prima provalo gratis</a>
-        </div>
+        <h2>Provalo adesso. Ci vogliono due minuti.</h2>
+        <p>Ti prepariamo un sito di prova solo tuo, per 24 ore. Ti serve solo Telegram.</p>
+        <a class="btn btn--brick btn--block" href="https://prova.sitocomanda.it/prova">Provalo gratis <svg class="arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
+        <a class="close__wa" href="https://wa.me/393895848609?text=Ciao%2C%20vorrei%20parlare%20del%20sito%20del%20mio%20locale" rel="noopener">Oppure scrivici su WhatsApp</a>
       </div>
     </section>
   </main>
@@ -263,6 +179,10 @@
       <p>Comanda è un prodotto di WER S.r.l. · Via Beata Maria de Mattias 2, 00183 Roma · P.IVA e Registro Imprese di Roma 17627411006 · Capitale sociale 10.000 € (versato 2.500 €) · <a href="mailto:info@sitocomanda.it">info@sitocomanda.it</a> · <a href="privacy.html">Privacy</a></p>
     </div>
   </footer>
+
+  <div class="sticky-cta" hidden>
+    <a class="btn btn--brick btn--block" href="https://prova.sitocomanda.it/prova">Provalo gratis <svg class="arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
+  </div>
 
   <script src="site.js" defer></script>
 </body>
