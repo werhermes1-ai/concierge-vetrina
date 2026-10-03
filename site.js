@@ -1,6 +1,108 @@
-// Comanda · vetrina: la demo Telegram animata e la barra "Provalo gratis".
+// Comanda · vetrina: l'intro del logo, la demo Telegram animata e la barra "Provalo gratis".
 // I testi della demo sono quelli di @provacomanda_bot (commit 91e3333 del bot): non inventarne.
 (function () {
+  // ---- Intro: il foglietto viene scritto, si richiude nella C e vola nella testata.
+  // Accesa dallo script in <head> (prima pagina della sessione, niente "riduci movimento").
+  // Un tocco, un tasto o lo scroll la chiudono subito.
+  var root = document.documentElement;
+  var introOn = root.classList.contains('is-intro');
+  var introEnd = [];
+  (function () {
+    var veil = document.querySelector('.intro');
+    var logo = veil && veil.querySelector('.intro__logo');
+    var dest = document.querySelector('.logo__svg');
+    if (!introOn) return;
+    if (!veil || !logo || !dest || !window.requestAnimationFrame) { root.classList.remove('is-intro'); introOn = false; return; }
+    root.classList.add('intro-js');
+
+    var $ = function (id) { return document.getElementById(id); };
+    var paper = $('intro-paper'), shape = $('intro-shape'), rules = $('intro-rules'), ink = $('intro-ink');
+    var fold = $('intro-fold'), mark = $('intro-mark'), pencil = $('intro-pencil'), win = $('intro-win-r');
+
+    // Il foglietto e la C hanno gli stessi comandi: si interpolano i numeri uno a uno.
+    var FROM = shape.getAttribute('d');
+    var TO = 'M 144 31 C 124 17 102 13 80 13 C 41 13 16 39 16 79 C 16 119 43 145 82 145 C 105 145 125 138 145 126 L 145 97 C 125 110 105 117 85 117 C 59 117 46 102 46 79 C 46 55 60 41 84 41 C 105 41 124 47 144 60 Z';
+    var NUM = /-?\d+(\.\d+)?/g;
+    var a = FROM.match(NUM).map(Number), b = TO.match(NUM).map(Number);
+
+    var clamp = function (v) { return v < 0 ? 0 : v > 1 ? 1 : v; };
+    var span = function (t, t0, t1) { return clamp((t - t0) / (t1 - t0)); };
+    var lerp = function (x, y, p) { return x + (y - x) * p; };
+    var inOut = function (p) { return p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2; };
+    var out = function (p) { return 1 - Math.pow(1 - p, 3); };
+    var mix = function (c1, c2, p) {
+      return 'rgb(' + [0, 1, 2].map(function (i) { return Math.round(lerp(c1[i], c2[i], p)); }).join(',') + ')';
+    };
+    var CARTA = [255, 253, 249], INCHIOSTRO = [29, 26, 23];
+
+    var FLY = 1600, END = 2050;
+    var fly = null; // { dx, dy, k } misurato all'inizio del volo
+
+    function frame(t) {
+      // 0-250: il foglietto entra salendo un poco
+      var pIn = out(span(t, 0, 250));
+      // 750-1200: si richiude nella C e scende alla misura del logo
+      var pM = inOut(span(t, 750, 1200));
+      var s = lerp(3.2, 1, pM), x = lerp(394, 0, pM), y = lerp(12, 0, pIn) * (1 - pM);
+      paper.setAttribute('transform', 'translate(' + x + ' ' + y + ') translate(82 79) scale(' + s + ') translate(-82 -79)');
+      paper.setAttribute('opacity', pIn);
+      var i = 0;
+      shape.setAttribute('d', FROM.replace(NUM, function () { var v = lerp(a[i], b[i], pM); i++; return v.toFixed(2); }));
+      shape.setAttribute('fill', mix(CARTA, INCHIOSTRO, pM));
+      shape.setAttribute('stroke-width', lerp(1.7, 0, pM));
+      rules.setAttribute('opacity', 1 - span(t, 700, 900));
+
+      // 250-650: la matita mattone scrive la riga; 650-780 si alza e sparisce
+      var pW = span(t, 250, 650), pUp = out(span(t, 650, 780));
+      ink.setAttribute('stroke-dashoffset', 72 * (1 - pW));
+      ink.setAttribute('opacity', t < 750 ? 1 : 0);
+      pencil.setAttribute('transform', 'translate(' + (46 + 72 * pW) + ' ' + (89 - 14 * pUp) + ')');
+      pencil.setAttribute('opacity', Math.min(span(t, 150, 250), 1 - pUp));
+
+      // 750-1200: la riga diventa il segno rosso della C
+      var pR = inOut(span(t, 750, 1200));
+      mark.setAttribute('opacity', t < 750 ? 0 : 1);
+      mark.setAttribute('transform', 'translate(' + lerp(82, 133, pR) + ' ' + lerp(89, 76, pR) + ') scale(' + lerp(1.385, 1, pR) + ' ' + lerp(0.114, 1, pR) + ') translate(-133 -76)');
+      fold.setAttribute('opacity', out(span(t, 1050, 1200)));
+
+      // 1150-1500: emerge OMANDA
+      win.setAttribute('width', 818 * out(span(t, 1150, 1500)));
+
+      // 1600-2050: il logo vola nella testata; il velo si scioglie tardi, quando il logo sta arrivando
+      if (t >= FLY) {
+        if (!fly) {
+          var r1 = logo.getBoundingClientRect(), r2 = dest.getBoundingClientRect();
+          fly = { dx: r2.left - r1.left, dy: r2.top - r1.top, k: r2.width / r1.width };
+          veil.style.pointerEvents = 'none';
+        }
+        var pF = inOut(span(t, FLY, END));
+        logo.style.transform = 'translate(' + fly.dx * pF + 'px,' + fly.dy * pF + 'px) scale(' + lerp(1, fly.k, pF) + ')';
+        veil.style.backgroundColor = 'rgba(250,246,239,' + (1 - Math.pow(span(t, 1750, END), 3)) + ')';
+      }
+    }
+
+    var t0 = null, raf = 0, done = false;
+    function finish() {
+      if (done) return;
+      done = true; introOn = false;
+      cancelAnimationFrame(raf);
+      ['pointerdown', 'keydown', 'wheel', 'touchstart'].forEach(function (e) { window.removeEventListener(e, skip, true); });
+      root.classList.remove('is-intro', 'intro-js');
+      veil.remove();
+      introEnd.forEach(function (fn) { fn(); });
+    }
+    function skip() { finish(); }
+    function tick(now) {
+      if (t0 === null) t0 = now;
+      var t = now - t0;
+      frame(Math.min(t, END));
+      if (t >= END) finish(); else raf = requestAnimationFrame(tick);
+    }
+    ['pointerdown', 'keydown', 'wheel', 'touchstart'].forEach(function (e) { window.addEventListener(e, skip, { capture: true, passive: true }); });
+    frame(0);
+    raf = requestAnimationFrame(tick);
+  })();
+
   var demo = document.getElementById('demo');
   var body = demo && demo.querySelector('[data-demo-body]');
   var field = demo && demo.querySelector('.tg-field');
@@ -140,15 +242,19 @@
       }, LOOP));
     };
 
+    // Durante l'intro la demo aspetta: parte quando il logo è arrivato in testata.
+    introEnd.push(function () { if (visible && !document.hidden) run(); });
+
     new IntersectionObserver(function (entries) {
       visible = entries[entries.length - 1].isIntersecting;
+      if (introOn) return;
       if (visible && !document.hidden) { if (!demo.hasAttribute('data-demo-running')) run(); }
       else { stop(); showFinal(); }
     }, { threshold: 0.4 }).observe(demo);
 
     document.addEventListener('visibilitychange', function () {
       if (document.hidden) { stop(); showFinal(); }
-      else if (visible) run();
+      else if (visible && !introOn) run();
     });
   }
 

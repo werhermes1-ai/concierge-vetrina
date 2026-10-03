@@ -1,4 +1,4 @@
-/* Comanda · vetrina sitocomanda.it · v2 del 2026-10-03 (token + stili in un solo file) */
+/* Comanda · vetrina sitocomanda.it · v2 del 2026-10-03, logo nuovo e intro (token + stili in un solo file) */
 
 /* ============================================================
    Comanda · design tokens · v1 · 2026-09-19
@@ -211,7 +211,18 @@ h3 { font-size: var(--fs-body-lg); font-weight: var(--w-bold); line-height: var(
 /* ---------- Testata ---------- */
 .top { position: sticky; top: 0; z-index: 20; background: rgba(250, 246, 239, 0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--paper-3); }
 .top__in { display: flex; align-items: center; justify-content: space-between; min-height: 4rem; }
-.logo img { width: 110px; height: auto; }
+.logo { display: block; }
+.logo img, .logo__svg { display: block; width: 150px; height: auto; }
+
+/* Intro: il foglietto diventa la C e vola nella testata. Acceso da <head>, animato da site.js.
+   Se site.js non arriva, dopo 4 s il velo sparisce da solo e il logo torna visibile. */
+.intro { display: none; }
+.is-intro .intro { display: flex; position: fixed; inset: 0; z-index: 100; align-items: center; justify-content: center; background: var(--paper); animation: intro-via 0s 4s forwards; }
+.is-intro .logo__svg { visibility: hidden; animation: intro-logo 0s 4s forwards; }
+.is-intro.intro-js .intro, .is-intro.intro-js .logo__svg { animation: none; }
+.intro__logo { width: min(84vw, 34rem); height: auto; overflow: visible; transform-origin: 0 0; }
+@keyframes intro-via { to { visibility: hidden; opacity: 0; } }
+@keyframes intro-logo { to { visibility: visible; } }
 
 .section { padding: var(--s-7) 0; }
 .section h2 { margin-bottom: var(--s-5); }
@@ -332,7 +343,7 @@ h3 { font-size: var(--fs-body-lg); font-weight: var(--w-bold); line-height: var(
 /* ---------- Piede ---------- */
 .foot { background: var(--ink); color: var(--paper-mute); font-size: var(--fs-label); padding: var(--s-6) 0 calc(var(--s-6) + 76px); }
 .foot__in { display: grid; gap: var(--s-4); }
-.foot img { width: 92px; height: auto; }
+.foot img { width: 124px; height: auto; }
 .foot a { color: var(--paper); }
 
 /* ---------- Barra fissa (solo telefono) ---------- */
