@@ -1,4 +1,4 @@
-// Comanda · vetrina: l'intro del logo, la demo Telegram animata e la barra "Provalo gratis".
+// Comanda · vetrina: l'intro del logo, la demo Telegram animata, il pannello "Parla con noi" e la barra fissa.
 // I testi della demo sono quelli di @provacomanda_bot (commit 91e3333 del bot): non inventarne.
 (function () {
   // ---- Intro: il logo del teaser Comanda (video-studio/projects/2026-10-02-comanda-teaser,
@@ -441,6 +441,20 @@
     document.addEventListener('visibilitychange', function () {
       if (document.hidden) { stop(); showFinal(); }
       else if (visible && !introOn) run();
+    });
+  }
+
+  // "Parla con noi": il pannello con chiamata, WhatsApp e mail.
+  // Senza <dialog>.showModal resta il link #parla, che lo apre col CSS :target.
+  var talk = document.getElementById('parla');
+  if (talk && typeof talk.showModal === 'function') {
+    document.addEventListener('click', function (e) {
+      var t = e.target.closest && e.target.closest('[data-talk]');
+      if (t) { e.preventDefault(); talk.showModal(); }
+    });
+    talk.addEventListener('click', function (e) {
+      // tocco fuori dal pannello (sul fondo) o sulla X: si chiude
+      if (e.target === talk || (e.target.closest && e.target.closest('[data-talk-close]'))) { e.preventDefault(); talk.close(); }
     });
   }
 

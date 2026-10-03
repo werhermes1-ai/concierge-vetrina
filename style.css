@@ -211,6 +211,8 @@ h3 { font-size: var(--fs-body-lg); font-weight: var(--w-bold); line-height: var(
 /* ---------- Testata ---------- */
 .top { position: sticky; top: 0; z-index: 20; background: rgba(250, 246, 239, 0.94); backdrop-filter: blur(8px); border-bottom: 1px solid var(--paper-3); }
 .top__in { display: flex; align-items: center; justify-content: space-between; min-height: 4rem; }
+.top__cta { display: flex; align-items: center; gap: var(--s-2); }
+.top__talk { display: none; }
 .logo { display: block; }
 .logo img, .logo__svg { display: block; width: 150px; height: auto; }
 
@@ -360,7 +362,6 @@ h3 { font-size: var(--fs-body-lg); font-weight: var(--w-bold); line-height: var(
 .close__in { display: grid; gap: var(--s-4); }
 .close h2 { margin-bottom: 0; }
 .close p { color: var(--ink-2); }
-.close__wa { justify-self: center; color: var(--brick); font-weight: 700; text-underline-offset: 4px; padding: var(--s-2); }
 
 /* ---------- Piede ---------- */
 .foot { background: var(--ink); color: var(--paper-mute); font-size: var(--fs-label); padding: var(--s-6) 0 calc(var(--s-6) + 76px); }
@@ -371,6 +372,35 @@ h3 { font-size: var(--fs-body-lg); font-weight: var(--w-bold); line-height: var(
 /* ---------- Barra fissa (solo telefono) ---------- */
 .sticky-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 30; padding: 10px var(--gutter) calc(12px + env(safe-area-inset-bottom)); background: rgba(250, 246, 239, 0.95); backdrop-filter: blur(8px); border-top: 1px solid var(--paper-3); }
 .sticky-cta[hidden] { display: none; }
+.sticky-cta:not([hidden]) { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-2); }
+.sticky-cta .btn { padding: 0 var(--s-2); }
+
+/* ---------- Parla con noi ---------- */
+.ico { width: 1.15em; height: 1.15em; flex: none; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
+.slip .slip__talk { margin-top: var(--s-2); background: #FFFDF9; }
+.talk { width: min(26rem, calc(100% - 2 * var(--gutter))); max-width: none; max-height: none; padding: 0; border: 0; border-radius: var(--r-lg); background: var(--paper); color: var(--ink); box-shadow: var(--shadow-sheet); }
+.talk::backdrop { background: rgba(29, 26, 23, 0.55); }
+.talk:target:not([open]) { display: block; position: fixed; inset: auto 0 0; margin: 0 auto; z-index: 50; }
+.talk__in { position: relative; padding: var(--s-6) var(--s-5) var(--s-5); }
+.talk h2 { font-size: var(--fs-h2); margin: 0 var(--s-7) var(--s-2) 0; }
+.talk p { color: var(--ink-2); }
+.talk__x { position: absolute; top: var(--s-3); right: var(--s-3); display: grid; place-items: center; width: var(--control-h); height: var(--control-h); border-radius: 50%; color: var(--ink-2); }
+.talk__x:hover { background: var(--paper-2); }
+.talk__x svg { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; }
+.talk__list { display: grid; gap: var(--s-3); margin-top: var(--s-5); }
+.talk__list a { display: flex; align-items: center; gap: var(--s-4); min-height: 4rem; padding: var(--s-3) var(--s-4); background: #FFFDF9; border: 1px solid var(--paper-3); border-radius: var(--r-md); text-decoration: none; transition: border-color var(--t-fast) var(--ease), background var(--t-fast) var(--ease); }
+.talk__list a:hover { border-color: var(--brick); background: var(--paper); }
+.talk__list b { display: block; font-size: 1.0625rem; }
+.talk__list small { display: block; font-size: var(--fs-small); color: var(--ink-3); }
+.talk__ico { flex: none; display: grid; place-items: center; width: 2.75rem; height: 2.75rem; border-radius: 50%; background: var(--brick); color: var(--paper); font-size: 1.25rem; }
+/* sul telefono è un foglio che sale dal basso */
+@media (max-width: 599px) {
+  .talk { width: 100%; margin: auto 0 0; border-radius: var(--r-lg) var(--r-lg) 0 0; }
+  .talk__in { padding-bottom: calc(var(--s-5) + env(safe-area-inset-bottom)); }
+  .talk[open] { animation: talk-up 0.24s var(--ease); }
+}
+@keyframes talk-up { from { transform: translateY(100%); } to { transform: none; } }
+@media (min-width: 600px) { .top__talk { display: inline-flex; } }
 
 /* ---------- Pagina privacy ---------- */
 .doc { padding: var(--s-7) 0 var(--s-9); }
