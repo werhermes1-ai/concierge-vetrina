@@ -243,7 +243,7 @@ h3 { font-size: var(--fs-body-lg); font-weight: var(--w-bold); line-height: var(
 .phone {
   width: 300px; max-width: 100%; height: 600px; margin: var(--s-5) auto 0;
   border: 7px solid var(--ink); border-radius: 47px; overflow: hidden;
-  display: flex; flex-direction: column;
+  display: flex; flex-direction: column; position: relative;
   background: linear-gradient(200deg, #D3E2B8 0%, #A9C99B 55%, #C7D9A8 100%);
   font: 13px/1.3 -apple-system, BlinkMacSystemFont, "Inter", "Segoe UI", system-ui, sans-serif;
   color: #000;
@@ -274,7 +274,7 @@ h3 { font-size: var(--fs-body-lg); font-weight: var(--w-bold); line-height: var(
 .tg-input svg { width: 20px; height: 20px; flex: none; }
 .tg-field { flex: 1; height: 32px; border-radius: 16px; background: #fff; border: 1px solid #DADADA; display: flex; align-items: center; padding: 0 12px; color: #A0A0A0; }
 .tg-field.is-typing { color: #000; }
-.tg-msg.is-new { animation: tg-in 0.25s var(--ease); }
+.tg-msg.is-new, .tg-row.is-new { animation: tg-in 0.25s var(--ease); }
 @keyframes tg-in { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: none; } }
 .tg-tap { position: absolute; width: 28px; height: 28px; margin: -14px 0 0 -14px; border-radius: 50%; background: rgba(29, 26, 23, 0.25); pointer-events: none; animation: tg-tap 0.45s ease-out forwards; }
 @keyframes tg-tap { from { transform: scale(0.4); opacity: 1; } to { transform: scale(1.4); opacity: 0; } }
