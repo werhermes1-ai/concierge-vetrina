@@ -149,7 +149,8 @@ ul, ol { padding: 0; list-style: none; }
 img, svg { display: block; }
 a { color: inherit; }
 button { font: inherit; color: inherit; }
-:focus-visible { outline: none; box-shadow: var(--focus); border-radius: var(--r-xs); }
+:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; border-radius: var(--r-xs); }
+.offer :focus-visible, .foot :focus-visible { outline-color: var(--amber); }
 
 .wrap { width: 100%; max-width: calc(var(--w-page) + 2 * var(--gutter)); margin: 0 auto; padding: 0 var(--gutter); }
 .skip { position: absolute; left: -999px; top: 0; background: var(--ink); color: var(--paper); padding: var(--s-3) var(--s-4); z-index: 99; }
@@ -268,7 +269,7 @@ h3 { font-size: var(--fs-body-lg); font-weight: var(--w-bold); line-height: var(
 .tg-row > .tg-msg { max-width: none; }
 .tg-kb { display: flex; flex-direction: column; gap: 3px; }
 .tg-kb__row { display: flex; gap: 3px; }
-.tg-kb__row span { flex: 1; min-width: 0; display: grid; place-items: center; height: 30px; border-radius: 8px; background: rgba(62, 90, 58, 0.44); color: #fff; font-size: 12px; font-weight: 600; white-space: nowrap; transition: background 150ms; }
+.tg-kb__row span { flex: 1; min-width: 0; display: grid; place-items: center; height: 30px; border-radius: 8px; background: rgba(40, 62, 38, 0.66); color: #fff; font-size: 12px; font-weight: 600; white-space: nowrap; transition: background 150ms; }
 .tg-kb__row span.is-tap { background: rgba(255, 255, 255, 0.9); color: #2A7BC0; }
 .tg-input { display: flex; align-items: center; gap: 8px; padding: 8px 10px 20px; background: #F6F6F6; color: #8E9AA3; }
 .tg-input svg { width: 20px; height: 20px; flex: none; }
@@ -303,7 +304,7 @@ h3 { font-size: var(--fs-body-lg); font-weight: var(--w-bold); line-height: var(
 .offer__list .strike { justify-self: start; }
 .offer__for { margin-top: var(--s-4) !important; color: var(--amber); font-weight: 700; font-size: var(--fs-small); }
 .offer__now { display: flex; align-items: center; gap: var(--s-3); }
-.offer__now b { font-size: 3.75rem; font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
+.offer__now b { white-space: nowrap; font-size: 3.75rem; font-weight: 800; line-height: 1; letter-spacing: -0.02em; }
 .offer__side { display: grid; gap: 6px; justify-items: start; color: var(--paper-mute); font-size: var(--fs-small); }
 .seats { margin-top: var(--s-5); }
 .seats__dots { display: flex; gap: 6px; }

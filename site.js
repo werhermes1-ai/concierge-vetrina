@@ -60,7 +60,7 @@
     var last = null; // { row, msg } dell'ultimo messaggio del bot
 
     var c = {
-      reset: function () { body.innerHTML = ''; body.removeAttribute('data-demo-state'); last = null; },
+      reset: function () { body.innerHTML = ''; body.removeAttribute('data-demo-state'); body.setAttribute('aria-hidden', 'true'); last = null; },
       bot: function (text, time, rows) {
         var msg = el('div', 'tg-msg');
         var p = el('p'); fill(p, text);
@@ -121,6 +121,8 @@
     var showFinal = function () {
       body.innerHTML = finalHTML;
       body.setAttribute('data-demo-state', 'final');
+      body.removeAttribute('aria-hidden');
+      last = null;
       if (field) { field.textContent = 'Messaggio'; field.classList.remove('is-typing'); }
       Array.prototype.forEach.call(demo.querySelectorAll('.tg-tap'), function (d) { d.remove(); });
     };
@@ -139,7 +141,7 @@
     };
 
     new IntersectionObserver(function (entries) {
-      visible = entries[0].isIntersecting;
+      visible = entries[entries.length - 1].isIntersecting;
       if (visible && !document.hidden) { if (!demo.hasAttribute('data-demo-running')) run(); }
       else { stop(); showFinal(); }
     }, { threshold: 0.4 }).observe(demo);
@@ -158,7 +160,7 @@
   if (bar && hero && close && 'IntersectionObserver' in window) {
     var heroIn = true, closeIn = false;
     var sync = function () { bar.hidden = heroIn || closeIn; };
-    new IntersectionObserver(function (e) { heroIn = e[0].isIntersecting; sync(); }).observe(hero);
-    new IntersectionObserver(function (e) { closeIn = e[0].isIntersecting; sync(); }).observe(close);
+    new IntersectionObserver(function (e) { heroIn = e[e.length - 1].isIntersecting; sync(); }).observe(hero);
+    new IntersectionObserver(function (e) { closeIn = e[e.length - 1].isIntersecting; sync(); }).observe(close);
   }
 })();
