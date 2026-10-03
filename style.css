@@ -89,7 +89,7 @@
   /* ---- Larghezze ---- */
   --w-text: 44rem;   /* 704: colonna di lettura */
   --w-hero: 60rem;   /* 960: titoli e claim */
-  --w-page: 70rem;   /* 1120: contenitore massimo */
+  --w-page: 76rem;   /* 1216: contenitore massimo (vetrina: la hero riempie gli schermi larghi) */
 
   /* ---- Controlli ---- */
   --control-h: 3rem;        /* 48: altezza minima di bottoni e campi */
@@ -228,21 +228,42 @@ h3 { font-size: var(--fs-body-lg); font-weight: var(--w-bold); line-height: var(
 .section { padding: var(--s-7) 0; }
 .section h2 { margin-bottom: var(--s-5); }
 
-/* ---------- Hero ---------- */
-.hero { padding: var(--s-4) 0 var(--s-7); }
-.hero__grid { display: flex; flex-direction: column; }
-.hero__grid > h1 { order: 1; font-size: clamp(1.875rem, 1.2rem + 3.4vw, 3.25rem); font-weight: 800; line-height: 1.08; letter-spacing: -0.01em; }
-.hero__grid > .lead { order: 2; margin-top: var(--s-3); font-size: 1rem; color: var(--ink-2); }
-.hero__grid > .phone { order: 3; }
-.hero__grid > .price-mini { order: 4; }
-.hero__grid > .hero__cta { order: 5; }
+/* ---------- Hero: tre punti, foglietto, pannello di sala ---------- */
+.hero { padding: var(--s-5) 0 var(--s-7); }
+.hero__grid { display: grid; gap: var(--s-7); }
 
-.price-mini { display: grid; justify-items: center; gap: var(--s-1); margin: var(--s-5) 0 var(--s-4); text-align: center; }
-.price-mini p { margin: 0; }
-.price-mini__list { display: flex; align-items: center; gap: var(--s-2); font-size: 1rem; color: var(--ink-3); }
-.price-mini__now { display: flex; align-items: center; gap: var(--s-3); }
-.price-mini__now b { font-size: 1.875rem; font-weight: 800; line-height: 1.1; }
-.price-mini__note { font-size: var(--fs-small); color: var(--ink-2); }
+/* I tre punti: come le righe del foglietto del logo, due d'inchiostro e l'ultima mattone */
+/* Ogni punto su una riga: il più lungo ("Lo cambi con un messaggio", col numero) misura 14,3em,
+   quindi il corpo è la larghezza della colonna divisa per 14,4. */
+.hero__copy { container-type: inline-size; }
+.claim { display: grid; gap: var(--s-3); font-size: clamp(1.25rem, 6.2vw - 0.15rem, 3.5rem); font-size: min(3.5rem, 100cqi / 14.4); font-weight: 800; line-height: 1.06; letter-spacing: -0.02em; white-space: nowrap; }
+.claim__row { display: flex; align-items: flex-start; }
+.claim__n { flex: none; display: grid; place-items: center; width: 1.5em; height: 1.5em; margin: 0.28em 0.55em 0 0; border-radius: 50%; background: var(--ink); color: var(--paper); font-size: 0.5em; font-weight: 800; letter-spacing: 0; }
+.claim__row:last-of-type { color: var(--brick); }
+.claim__row:last-of-type .claim__n { background: var(--brick); }
+.hero .lead { margin-top: var(--s-5); font-size: var(--fs-body-lg); color: var(--ink-2); max-width: 30rem; }
+
+/* Il foglietto col prezzo: fori in alto, orecchia in basso, inclinato come nei template */
+.slip { position: relative; max-width: 26rem; margin-top: var(--s-6); padding: var(--s-6) var(--s-5) var(--s-5); background: #FFFDF9; border: 1px solid var(--paper-3); transform: rotate(var(--tilt-slip)); }
+.slip::before { content: ""; position: absolute; top: 12px; left: 20px; right: 20px; height: 8px; background: radial-gradient(circle at 4px 4px, var(--ink) 3.2px, transparent 3.7px) 0 0 / 20px 8px repeat-x; opacity: 0.85; }
+.slip::after { content: ""; position: absolute; right: -1px; bottom: -1px; width: 30px; height: 30px; background: linear-gradient(to top left, var(--paper) 50%, var(--fold) 50%); }
+.slip p { margin: 0; }
+.slip__list { display: flex; align-items: center; gap: var(--s-2); font-size: 1rem; color: var(--ink-3); }
+.slip__now { display: flex; align-items: center; gap: var(--s-3); margin-top: var(--s-1) !important; }
+.slip__now b { font-size: clamp(1.75rem, 7.5vw, 2.25rem); font-weight: 800; line-height: 1.1; letter-spacing: -0.01em; white-space: nowrap; }
+.slip__note { margin-top: var(--s-1) !important; font-size: var(--fs-small); color: var(--ink-2); }
+.slip .btn { margin-top: var(--s-5); }
+
+/* Il telefono sul pannello d'inchiostro con le luci di sala del teaser */
+.stage { position: relative; isolation: isolate; overflow: hidden; display: grid; place-items: center; padding: var(--s-6) var(--s-4); border-radius: 28px; background: var(--ink); }
+.stage::before { content: ""; position: absolute; inset: -10%; z-index: -1; filter: blur(6px);
+  background:
+    radial-gradient(circle at 16% 20%, rgba(232, 163, 61, 0.34), transparent 22%),
+    radial-gradient(circle at 86% 26%, rgba(184, 65, 42, 0.45), transparent 26%),
+    radial-gradient(circle at 74% 84%, rgba(232, 163, 61, 0.26), transparent 28%),
+    radial-gradient(circle at 12% 78%, rgba(250, 220, 170, 0.16), transparent 18%),
+    radial-gradient(circle at 46% 54%, rgba(184, 65, 42, 0.18), transparent 34%); }
+.stage .phone { margin: 0; border-color: #0B0A09; box-shadow: 0 0 0 1px rgba(250, 246, 239, 0.14), 0 30px 60px rgba(0, 0, 0, 0.45); }
 
 .strike { position: relative; text-decoration: none; font-weight: 700; font-size: 1.625rem; line-height: 1.15; color: var(--ink-2); white-space: nowrap; }
 .strike::after { content: ""; position: absolute; left: -2px; right: -2px; top: 52%; height: 3px; background: var(--brick); }
@@ -364,13 +385,8 @@ h3 { font-size: var(--fs-body-lg); font-weight: var(--w-bold); line-height: var(
 /* ---------- Desktop ---------- */
 @media (min-width: 960px) {
   .section { padding: var(--s-9) 0; }
-  .hero { padding: var(--s-8) 0 var(--s-9); }
-  .hero__grid { display: grid; grid-template-columns: 1fr 320px; grid-template-areas: "h ph" "l ph" "p ph" "c ph"; grid-template-rows: auto auto auto 1fr; column-gap: var(--s-9); align-content: center; }
-  .hero__grid > h1 { grid-area: h; align-self: end; }
-  .hero__grid > .lead { grid-area: l; font-size: var(--fs-body-lg); }
-  .hero__grid > .price-mini { grid-area: p; justify-items: start; text-align: left; margin: var(--s-6) 0 var(--s-5); }
-  .hero__grid > .hero__cta { grid-area: c; justify-self: start; align-self: start; width: auto; padding: 0 var(--s-6); }
-  .hero__grid > .phone { grid-area: ph; align-self: center; margin: 0; }
+  .hero { padding: var(--s-7) 0 var(--s-8); }
+  .stage { min-height: 42rem; padding: var(--s-7); }
   .steps__list { grid-template-columns: repeat(3, 1fr); gap: var(--s-6); }
   .changes__list { grid-template-columns: repeat(3, 1fr); }
   .offer__in { display: grid; grid-template-columns: 1fr 1fr; gap: var(--s-8); align-items: start; }
@@ -381,6 +397,12 @@ h3 { font-size: var(--fs-body-lg); font-weight: var(--w-bold); line-height: var(
   .foot__in { grid-template-columns: auto 1fr; align-items: center; }
   .foot p { text-align: right; }
   .sticky-cta { display: none !important; }
+}
+
+/* Hero a due colonne solo quando i tre punti restano grandi accanto al telefono */
+@media (min-width: 1100px) {
+  .hero__grid { grid-template-columns: minmax(0, 1fr) 30rem; gap: var(--s-8); align-items: center; }
+  .slip { margin-top: var(--s-7); }
 }
 
 @media (prefers-reduced-motion: reduce) {

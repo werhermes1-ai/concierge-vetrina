@@ -20,7 +20,7 @@
   <link rel="icon" href="assets/comanda-favicon-32.png" type="image/png" sizes="32x32">
   <link rel="apple-touch-icon" href="assets/comanda-icona-ios-180.png">
   <link rel="preload" href="fonts/archivo-latin.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="style.css?v=20261003c">
+  <link rel="stylesheet" href="style.css?v=20261003d">
   <script>/* intro: decisa prima del primo disegno, così la pagina non lampeggia */
   (function () { try { var d = document.documentElement;
     if (!matchMedia('(prefers-reduced-motion: reduce)').matches && !sessionStorage.getItem('comanda-intro')) {
@@ -63,42 +63,49 @@
   </header>
 
   <main id="main">
-    <!-- HERO: figli piatti, l'ordine lo decide il CSS -->
+    <!-- HERO: tre punti, il foglietto col prezzo, il telefono sul pannello di sala -->
     <section class="hero">
       <div class="wrap hero__grid">
-        <h1>Il sito del tuo locale, pronto in 48 ore. Poi lo cambi dal cellulare.</h1>
-        <p class="lead">Noi lo facciamo, tu lo aggiorni: menù, orari e foto.</p>
+        <div class="hero__copy">
+          <h1 class="claim">
+            <span class="claim__row"><span class="claim__n" aria-hidden="true">1</span><span>Il sito del tuo locale</span></span><span class="sr">. </span>
+            <span class="claim__row"><span class="claim__n" aria-hidden="true">2</span><span>Pronto in 48 ore</span></span><span class="sr">. </span>
+            <span class="claim__row"><span class="claim__n" aria-hidden="true">3</span><span>Lo cambi con un messaggio</span></span>
+          </h1>
+          <p class="lead">Noi lo facciamo, tu lo aggiorni: menù, orari e foto.</p>
 
-        <figure class="phone" id="demo" aria-label="Esempio di chat con Comanda su Telegram: la Carbonara passa da € 13.00 a € 14.00 e il sito si aggiorna">
-          <div class="tg-status" aria-hidden="true">
-            <span>12:41</span>
-            <svg viewBox="0 0 44 12"><path d="M1 9h2v2H1zM5 7h2v4H5zM9 5h2v6H9zM13 3h2v8h-2z"/><path d="M20 5.5a7 7 0 0 1 9 0M22 8a4 4 0 0 1 5 0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="33" y="2" width="9" height="8" rx="2" fill="none" stroke="currentColor"/><rect x="34.5" y="3.5" width="6" height="5" rx="1"/></svg>
+          <div class="slip">
+            <p class="slip__list">Listino <s class="strike">1.000 € + IVA</s></p>
+            <p class="slip__now"><b>300 € + IVA</b> <span class="badge">-70%</span></p>
+            <p class="slip__note">Sito + un anno di Comanda · primi 10 locali</p>
+            <a class="btn btn--brick btn--block" href="https://prova.sitocomanda.it/prova">Provalo gratis <svg class="arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
           </div>
-          <div class="tg-head" aria-hidden="true">
-            <span class="tg-back">‹ Chat</span>
-            <span class="tg-who"><b>Comanda</b><small>bot</small></span>
-            <img class="tg-avatar" src="assets/comanda-avatar-96.png" alt="" width="34" height="34">
-          </div>
-          <div class="tg-body" data-demo-body data-demo-state="final">
-            <div class="tg-msg tg-msg--me"><p>carbonara</p><time>12:41 <i class="tg-ticks"></i></time></div>
-            <div class="tg-row"><div class="tg-msg"><p>Carbonara: adesso è € 13.00. Quale prezzo vuoi mettere?</p><time>12:41</time></div><div class="tg-kb"><div class="tg-kb__row"><span>€ 12.50</span><span>€ 13.00</span><span>€ 13.50</span></div><div class="tg-kb__row"><span class="is-tap">€ 14.00</span><span>€ 14.50</span><span>€ 15.00</span></div></div></div>
-            <div class="tg-row"><div class="tg-msg"><p>Ecco come viene:<br><span class="tg-link">prova.sitocomanda.it/…/anteprima/</span></p><time>12:42</time></div><div class="tg-kb"><div class="tg-kb__row"><span>🚀 Pubblica</span><span>✗ Annulla</span></div></div></div>
-            <div class="tg-row"><div class="tg-msg"><p>Fatto, è online:<br><span class="tg-link">prova.sitocomanda.it/…/</span></p><time>12:42</time></div><div class="tg-kb"><div class="tg-kb__row"><span>↩️ Annulla</span></div></div></div>
-          </div>
-          <div class="tg-input" aria-hidden="true">
-            <svg viewBox="0 0 20 20"><path d="m14 9-5.5 5.5a3 3 0 0 1-4.2-4.2l6.4-6.4a2 2 0 0 1 2.8 2.8l-6.3 6.3a1 1 0 0 1-1.4-1.4L11 6.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-            <span class="tg-field">Messaggio</span>
-            <svg viewBox="0 0 20 20"><rect x="7" y="2" width="6" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 9.5a5.5 5.5 0 0 0 11 0M10 15v3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </div>
-        </figure>
-
-        <div class="price-mini">
-          <p class="price-mini__list">Listino <s class="strike">1.000 € + IVA</s></p>
-          <p class="price-mini__now"><b>300 € + IVA</b> <span class="badge">-70%</span></p>
-          <p class="price-mini__note">Sito + un anno di Comanda · primi 10 locali</p>
         </div>
 
-        <a class="btn btn--brick btn--block hero__cta" href="https://prova.sitocomanda.it/prova">Provalo gratis <svg class="arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
+        <div class="stage">
+          <figure class="phone" id="demo" aria-label="Esempio di chat con Comanda su Telegram: la Carbonara passa da € 13.00 a € 14.00 e il sito si aggiorna">
+            <div class="tg-status" aria-hidden="true">
+              <span>12:41</span>
+              <svg viewBox="0 0 44 12"><path d="M1 9h2v2H1zM5 7h2v4H5zM9 5h2v6H9zM13 3h2v8h-2z"/><path d="M20 5.5a7 7 0 0 1 9 0M22 8a4 4 0 0 1 5 0" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/><rect x="33" y="2" width="9" height="8" rx="2" fill="none" stroke="currentColor"/><rect x="34.5" y="3.5" width="6" height="5" rx="1"/></svg>
+            </div>
+            <div class="tg-head" aria-hidden="true">
+              <span class="tg-back">‹ Chat</span>
+              <span class="tg-who"><b>Comanda</b><small>bot</small></span>
+              <img class="tg-avatar" src="assets/comanda-avatar-96.png" alt="" width="34" height="34">
+            </div>
+            <div class="tg-body" data-demo-body data-demo-state="final">
+              <div class="tg-msg tg-msg--me"><p>carbonara</p><time>12:41 <i class="tg-ticks"></i></time></div>
+              <div class="tg-row"><div class="tg-msg"><p>Carbonara: adesso è € 13.00. Quale prezzo vuoi mettere?</p><time>12:41</time></div><div class="tg-kb"><div class="tg-kb__row"><span>€ 12.50</span><span>€ 13.00</span><span>€ 13.50</span></div><div class="tg-kb__row"><span class="is-tap">€ 14.00</span><span>€ 14.50</span><span>€ 15.00</span></div></div></div>
+              <div class="tg-row"><div class="tg-msg"><p>Ecco come viene:<br><span class="tg-link">prova.sitocomanda.it/…/anteprima/</span></p><time>12:42</time></div><div class="tg-kb"><div class="tg-kb__row"><span>🚀 Pubblica</span><span>✗ Annulla</span></div></div></div>
+              <div class="tg-row"><div class="tg-msg"><p>Fatto, è online:<br><span class="tg-link">prova.sitocomanda.it/…/</span></p><time>12:42</time></div><div class="tg-kb"><div class="tg-kb__row"><span>↩️ Annulla</span></div></div></div>
+            </div>
+            <div class="tg-input" aria-hidden="true">
+              <svg viewBox="0 0 20 20"><path d="m14 9-5.5 5.5a3 3 0 0 1-4.2-4.2l6.4-6.4a2 2 0 0 1 2.8 2.8l-6.3 6.3a1 1 0 0 1-1.4-1.4L11 6.4" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+              <span class="tg-field">Messaggio</span>
+              <svg viewBox="0 0 20 20"><rect x="7" y="2" width="6" height="10" rx="3" fill="none" stroke="currentColor" stroke-width="1.5"/><path d="M4.5 9.5a5.5 5.5 0 0 0 11 0M10 15v3" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+          </figure>
+        </div>
       </div>
     </section>
 
@@ -187,6 +194,6 @@
     <a class="btn btn--brick btn--block" href="https://prova.sitocomanda.it/prova">Provalo gratis <svg class="arrow" viewBox="0 0 20 20" aria-hidden="true"><path d="M4 10h11m-4-4 4 4-4 4"/></svg></a>
   </div>
 
-  <script src="site.js?v=20261003c" defer></script>
+  <script src="site.js?v=20261003d" defer></script>
 </body>
 </html>
