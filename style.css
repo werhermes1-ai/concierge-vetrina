@@ -1,4 +1,4 @@
-/* Comanda · vetrina sitocomanda.it · v2 del 2026-10-03, logo nuovo e intro (token + stili in un solo file) */
+/* Comanda · vetrina sitocomanda.it · v2 del 2026-10-03, logo nuovo e intro del teaser (token + stili in un solo file) */
 
 /* ============================================================
    Comanda · design tokens · v1 · 2026-09-19
@@ -214,13 +214,14 @@ h3 { font-size: var(--fs-body-lg); font-weight: var(--w-bold); line-height: var(
 .logo { display: block; }
 .logo img, .logo__svg { display: block; width: 150px; height: auto; }
 
-/* Intro: il foglietto diventa la C e vola nella testata. Acceso da <head>, animato da site.js.
-   Se site.js non arriva, dopo 4 s il velo sparisce da solo e il logo torna visibile. */
+/* Intro: il logo del teaser (foglietto, C, OMANDA) su velo inchiostro, poi vola nella testata.
+   Acceso da <head>, disegnato da site.js su canvas. Se site.js non arriva, dopo 4 s il velo
+   sparisce da solo e il logo torna visibile. */
 .intro { display: none; }
-.is-intro .intro { display: flex; position: fixed; inset: 0; z-index: 100; align-items: center; justify-content: center; background: var(--paper); animation: intro-via 0s 4s forwards; }
+.is-intro .intro { display: block; position: fixed; inset: 0; z-index: 100; background: var(--ink); animation: intro-via 0s 4s forwards; }
 .is-intro .logo__svg { visibility: hidden; animation: intro-logo 0s 4s forwards; }
 .is-intro.intro-js .intro, .is-intro.intro-js .logo__svg { animation: none; }
-.intro__logo { width: min(84vw, 34rem); height: auto; overflow: visible; transform-origin: 0 0; }
+.intro__cv { display: block; width: 100%; height: 100%; }
 @keyframes intro-via { to { visibility: hidden; opacity: 0; } }
 @keyframes intro-logo { to { visibility: visible; } }
 
