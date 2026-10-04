@@ -5,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Prendi il sito del tuo locale | Comanda</title>
   <meta name="description" content="Incolla il link Google Maps del tuo locale, controlla l'anteprima e paga online: il sito è pronto entro 48 ore. 300 € + IVA con un anno di Comanda.">
-  <meta name="robots" content="noindex">
   <link rel="canonical" href="https://sitocomanda.it/acquista.html">
   <meta name="theme-color" content="#1D1A17">
   <link rel="icon" href="assets/comanda-favicon.ico" sizes="any">
@@ -186,7 +185,7 @@
       </section>
 
       <!-- ⑤ Fatto: il ritorno da Stripe -->
-      <section class="step done" data-passo="fatto" hidden>
+      <section class="step done" data-passo="fatto" aria-labelledby="pf-t" hidden>
         <div data-done="attesa">
           <span class="done__spin" aria-hidden="true"></span>
           <h1 class="step__title" id="pf-t" tabindex="-1" data-done-title>Controllo il pagamento…</h1>
@@ -194,7 +193,7 @@
         </div>
         <div data-done="ok" hidden>
           <span class="done__mark" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="m5 12.5 4.5 4.5L19 7.5"/></svg></span>
-          <h1 class="step__title" tabindex="-1">Fatto.</h1>
+          <h1 class="step__title" id="pf-ok-t" tabindex="-1">Fatto.</h1>
           <p class="done__lead" data-done-text>Il sito del tuo locale è in arrivo: entro 48 ore te lo mandiamo su WhatsApp, poi attiviamo Comanda su Telegram.</p>
           <ol class="done__steps">
             <li><span class="steps__n" aria-hidden="true">1</span><div><h2>Oggi</h2><p>Ti scriviamo su WhatsApp.</p></div></li>
@@ -204,7 +203,7 @@
           <p class="done__note">La ricevuta di Stripe ti è arrivata per email.</p>
         </div>
         <div data-done="no" hidden>
-          <h1 class="step__title" tabindex="-1">Stiamo aspettando la conferma del pagamento</h1>
+          <h1 class="step__title" id="pf-no-t" tabindex="-1">Stiamo aspettando la conferma del pagamento</h1>
           <p class="step__lead">Se hai pagato, la ricevuta di Stripe ti arriva per email e ti scriviamo noi. Se qualcosa non torna, parla con noi.</p>
           <div class="step__actions">
             <a class="btn btn--brick btn--block" href="#parla" data-talk><svg class="ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2"/></svg>Parla con noi</a>

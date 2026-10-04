@@ -93,7 +93,6 @@
 .trappola { position: absolute; left: -10000px; width: 1px; height: 1px; overflow: hidden; }
 
 /* ---------- Avvisi (errori del passo) ---------- */
-.alert:empty { display: none; }
 .alert { padding: var(--s-3) var(--s-4); border-radius: var(--r-sm); background: var(--err-soft); color: var(--err); font-size: var(--fs-small); font-weight: 600; line-height: 1.45; border-left: 4px solid var(--err); }
 .alert p + p { margin-top: var(--s-1); }
 .alert button { padding: 0; border: 0; background: none; text-decoration: underline; cursor: pointer; font-size: inherit; }
@@ -154,6 +153,10 @@
 .done__note { margin-top: var(--s-5); font-size: var(--fs-small); color: var(--ink-3); }
 
 .buy__alert { margin-bottom: var(--s-5); padding: var(--s-4); background: var(--amber-soft); border-radius: var(--r-sm); }
+
+/* Avviso vuoto: fuori vista ma ancora nell'albero di accessibilità, così la regione aria-live
+   annuncia il testo appena compare (con display:none alcuni lettori lo perdono) */
+.alert:empty { position: absolute; width: 1px; height: 1px; margin: 0; padding: 0; border: 0; overflow: hidden; clip: rect(0 0 0 0); }
 
 @media (min-width: 768px) {
   .buy__main { padding-top: var(--s-7); }

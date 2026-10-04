@@ -123,7 +123,6 @@
     var dove = b.getAttribute('data-go');
     if (dove === '3') { $('[data-who-name]').textContent = stato.scheda ? stato.scheda.nome : ''; }
     mostra(dove, { storia: 'push' });
-    if (dove === '1') { inputLink.select(); }
   });
 
   // ---------- Posti e prezzo ----------
@@ -299,9 +298,14 @@
       if (msg) f.setAttribute('aria-invalid', 'true'); else f.removeAttribute('aria-invalid');
     });
     var primo = $$('[aria-invalid="true"]', formOrdine)[0];
-    var n = Object.keys(errori).filter(function (k) { return errori[k]; }).length;
-    avviso(3, '<p>' + (n === 1 ? 'Controlla il campo segnato.' : 'Controlla i campi segnati.') + '</p>');
-    if (primo) primo.focus();
+    var n = $$('[aria-invalid="true"]', formOrdine).length;
+    if (n) {
+      avviso(3, '<p>' + (n === 1 ? 'Controlla il campo segnato.' : 'Controlla i campi segnati.') + '</p>');
+      primo.focus();
+    } else {
+      // il server ha segnato un campo che la pagina non conosce
+      avviso(3, '<p>Qualcosa nei dati non torna. Controlla e riprova, oppure ' + PARLA + '.</p>');
+    }
   }
   function controllaVuoti(v) {
     var e = {};
@@ -366,9 +370,11 @@
         avviso(3, '<p>Troppe richieste, riprova fra un\'ora.</p>');
       } else {
         avviso(3, '<p>Il pagamento non risponde. Riprova tra poco.</p><p>Oppure ' + PARLA + '.</p>');
+        apriParla();
       }
     }).catch(function () {
       avviso(3, '<p>Il pagamento non risponde. Riprova tra poco.</p><p>Oppure ' + PARLA + '.</p>');
+      apriParla();
     }).finally(function () { if (!resta) occupa(btn, false); });
   });
 
@@ -380,10 +386,11 @@
   });
 
   // ---------- ⑤ Fatto ----------
-  function blocco(quale) {
+  function blocco(quale, fuoco) {
     $$('[data-done]').forEach(function (b) { b.hidden = b.getAttribute('data-done') !== quale; });
     var t = $('[data-done="' + quale + '"] .step__title');
-    if (quale !== 'attesa' && t) { window.scrollTo(0, 0); t.focus({ preventScroll: true }); }
+    if (t) $('[data-passo="fatto"]').setAttribute('aria-labelledby', t.id);
+    if ((quale !== 'attesa' || fuoco) && t) { window.scrollTo(0, 0); t.focus({ preventScroll: true }); }
   }
   function fatto(locale) {
     $('[data-done-text]').textContent = (locale ? 'Il sito di ' + locale : 'Il sito del tuo locale') +
@@ -391,11 +398,11 @@
     mostra('fatto', { fuoco: false });
     blocco('ok');
   }
-  function aspetta(id) {
+  function aspetta(id, fuoco) {
     var inizio = Date.now();
     var memoria = leggi();
     mostra('fatto', { fuoco: false });
-    blocco('attesa');
+    blocco('attesa', fuoco);
     annuncia('Controllo il pagamento.');
     function nonAncora() { blocco('no'); }
     function giro() {
@@ -427,7 +434,7 @@
   if (memoria.condizioni) condizioni.checked = true;
 
   if (idFatto) {
-    $('[data-done-retry]').addEventListener('click', function () { aspetta(idFatto); });
+    $('[data-done-retry]').addEventListener('click', function () { aspetta(idFatto, true); });
     aspetta(idFatto);
   } else {
     var annullato = q.get('annullato') === '1';
